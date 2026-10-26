@@ -1,0 +1,125 @@
+/* Layout: one readable column; portrait beside the name; projects as small
+   drawing + text rows that stack on phones. Colors are Rice blue on a cool white,
+   with a matching dark theme that follows the visitor's system setting. */
+:root {
+  --bg: #f6f8fb;
+  --ink: #142033;
+  --muted: #56627a;
+  --line: #d9e0ec;
+  --accent: #00205b;          /* Rice blue */
+  --accent-soft: #e4eaf5;
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c131f; --ink: #e5eaf3; --muted: #9ba8be; --line: #26344b;
+    --accent: #a3c0ff; --accent-soft: #19253b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c131f; --ink: #e5eaf3; --muted: #9ba8be; --line: #26344b;
+  --accent: #a3c0ff; --accent-soft: #19253b; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16.5px/1.65 var(--font-body);
+}
+
+.page {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding-block: 3.5rem 2.5rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 2.75rem;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(2.1rem, 6vw, 3rem); letter-spacing: -0.01em; }
+h2 { font-size: 1.55rem; margin-bottom: 0.8rem; }
+h3 { font-size: 1.22rem; }
+p { margin: 0 0 0.85rem; max-width: 65ch; }
+p:last-child { margin-bottom: 0; }
+
+/* Header */
+.intro { display: grid; grid-template-columns: auto 1fr; gap: 1.75rem; align-items: center; }
+.intro-text { min-width: 0; }
+.portrait {
+  width: 148px; height: 148px; border-radius: 50%;
+  object-fit: cover; background: var(--accent-soft); display: block;
+}
+.role { color: var(--muted); font-size: 1.05rem; margin: 0.4rem 0 0.9rem; }
+.links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; font-family: var(--font-mono); font-size: 0.9rem; }
+
+/* About */
+.looking strong { font-weight: 600; }
+.topics { list-style: none; margin: 1.1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.topics li {
+  font-size: 0.85rem; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.7rem;
+}
+
+/* News */
+.news { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.news li { display: grid; grid-template-columns: 6.25rem 1fr; gap: 1rem; }
+.news li > span { min-width: 0; }
+.news time {
+  font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted);
+  font-variant-numeric: tabular-nums; padding-top: 0.12rem;
+}
+
+/* Projects */
+.project-list { display: grid; gap: 2rem; }
+.project { display: grid; grid-template-columns: 96px 1fr; gap: 1.35rem; align-items: start; }
+.project-art {
+  width: 96px; height: 96px; max-width: 100%;
+  border-radius: 14px; background: var(--accent-soft); color: var(--accent);
+}
+.project-body { min-width: 0; }
+.project h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.65rem; margin-bottom: 0.4rem; }
+.status {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 4px; padding: 0.05rem 0.4rem;
+}
+.meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); }
+.project-links { display: flex; gap: 1.1rem; font-family: var(--font-mono); font-size: 0.9rem; }
+
+/* Research (when you uncomment it) */
+.papers { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.paper-title { font-weight: 600; margin-bottom: 0.15rem; }
+.paper-meta { color: var(--muted); font-size: 0.95rem; }
+
+.footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+
+/* Phones */
+@media (max-width: 560px) {
+  .page { padding-block: 2.25rem 2rem; gap: 2.25rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.1rem; }
+  .portrait { width: 112px; height: 112px; }
+  .news li { grid-template-columns: 1fr; gap: 0; }
+  .project { grid-template-columns: 64px 1fr; gap: 1rem; }
+  .project-art { width: 64px; height: 64px; border-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: text-decoration-thickness 0.15s ease; }
+}

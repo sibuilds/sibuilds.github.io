@@ -1,0 +1,185 @@
+<!doctype html>
+<!--
+  ============================================================================
+  HOW TO EDIT THIS WEBSITE (cheat sheet)
+  ----------------------------------------------------------------------------
+  * All the text lives in THIS file. The look lives in style.css (you rarely
+    need to touch it).
+  * Search for "EDIT" to find every spot with placeholder text.
+  * Add a project: copy one <article class="project"> ... </article> block,
+    paste it below the others, and change the text and links.
+  * Add a news item: copy one <li> ... </li> line inside <ol class="news">.
+  * Replace your CV: upload a new file named cv.pdf (same name, so the link works).
+  * Your photo: put it at images/profile.jpg and change "profile.svg" to
+    "profile.jpg" below.
+  * After editing on GitHub, click "Commit changes". The site updates in ~1 minute.
+  ============================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- EDIT: your name. It shows in the browser tab and in Google results. -->
+  <title>Firstname Lastname</title>
+  <meta name="description" content="Firstname Lastname, PhD student in Statistics at Rice University. Statistical and deep-learning models of human behavior.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+
+  <!-- ======================= HEADER: photo, name, links ======================= -->
+  <header class="intro">
+    <!-- EDIT: replace images/profile.svg with your photo (e.g. images/profile.jpg) -->
+    <img class="portrait" src="images/profile.svg" alt="Portrait of Firstname Lastname" width="148" height="148">
+    <div class="intro-text">
+      <h1>Firstname Lastname</h1> <!-- EDIT -->
+      <p class="role">PhD student in Statistics, Rice University</p>
+      <nav class="links" aria-label="Contact and profiles">
+        <a href="mailto:si20@rice.edu">Email</a>
+        <a href="cv.pdf">CV</a>
+        <a href="https://github.com/sibuilds">GitHub</a>            <!-- EDIT -->
+        <a href="https://www.linkedin.com/in/YOURNAME">LinkedIn</a>    <!-- EDIT -->
+        <!-- When you have one, uncomment this line:
+        <a href="https://scholar.google.com/citations?user=XXXX">Scholar</a> -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================================ ABOUT ================================== -->
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <p>I'm a PhD student in Statistics at Rice University, advised by Meng Li. I'm interested
+      in physics-based AI: energy-based and probabilistic models, sampling as a form of
+      computation, and the hardware and software that could make AI far more efficient.
+      I like building things from scratch to understand them, from autograd engines to small models.</p>
+    <p>I started my PhD in political science and moved to statistics to work on the methods
+      themselves. Before Rice, I studied mathematics and political science at the University of Vienna.</p>
+    <p class="looking">I'm looking for a <strong>Summer 2027 internship</strong> in
+      physics-inspired AI or machine learning research. <a href="mailto:si20@rice.edu">Get in touch</a>.</p>
+    <!-- EDIT: keep 3 to 5 topics you'd happily talk about in an interview -->
+    <ul class="topics" aria-label="Research interests">
+      <li>Physics-based AI</li>
+      <li>Energy-based models</li>
+      <li>Sampling &amp; MCMC</li>
+      <li>Hardware–software co-design</li>
+      <li>Neuromorphic computing</li>
+    </ul>
+  </section>
+
+  <!-- ================================= NEWS ================================== -->
+  <section id="news" aria-labelledby="news-h">
+    <h2 id="news-h">News</h2>
+    <ol class="news">
+      <!-- Newest first. Copy a line to add news. -->
+      <li><time datetime="2026-10">Oct 2026</time><span>Started two side projects:
+        <a href="#punchtracker">PunchTracker</a> and <a href="#swipe-or-stay">Swipe or Stay</a>.</span></li>
+      <li><time datetime="2026-10">Oct 2026</time><span>Launched this website.</span></li>
+    </ol>
+  </section>
+
+  <!-- =============================== PROJECTS ================================ -->
+  <section id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h">Projects</h2>
+    <div class="project-list">
+
+      <!-- Project 1 ---------------------------------------------------------- -->
+      <article class="project" id="punchtracker">
+        <svg class="project-art" viewBox="0 0 96 96" role="img" aria-label="Stick figure throwing a jab, with joints marked as keypoints">
+          <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="33" cy="24" r="7"/>
+            <path d="M34 31 L36 57"/>
+            <path d="M35 37 L27 45 L31 35"/>
+            <path d="M35 37 L52 36 L67 35"/>
+            <path d="M36 57 L28 76 L23 86 M36 57 L46 75 L51 86"/>
+            <path d="M40 41 Q56 27 68 34" stroke-dasharray="2 4" opacity=".55"/>
+          </g>
+          <g fill="currentColor">
+            <circle cx="71" cy="35" r="4.5"/><circle cx="31" cy="34" r="3.5"/>
+            <circle cx="35" cy="37" r="2"/><circle cx="52" cy="36" r="2"/><circle cx="27" cy="45" r="2"/>
+            <circle cx="36" cy="57" r="2"/><circle cx="28" cy="76" r="2"/><circle cx="46" cy="75" r="2"/>
+          </g>
+        </svg>
+        <div class="project-body">
+          <h3>PunchTracker <span class="status">In progress</span></h3>
+          <p>An AI boxing coach that works from a single phone video. It tracks 33 body
+            keypoints per frame, then detects, counts, and classifies punches (jab, cross,
+            hook, uppercut) and reports per-round stats like punches per minute.</p>
+          <p class="meta">Computer vision · Pose estimation · Python, MediaPipe, OpenCV</p>
+          <p class="project-links"><a href="https://github.com/sibuilds/punchtracker">Code</a></p> <!-- EDIT -->
+        </div>
+      </article>
+
+      <!-- Project 2 ---------------------------------------------------------- -->
+      <article class="project" id="swipe-or-stay">
+        <svg class="project-art" viewBox="0 0 96 96" role="img" aria-label="Retention curve: the share of viewers still watching falls over time">
+          <path d="M18 18 V78 H82" fill="none" stroke="currentColor" stroke-width="2" opacity=".45"/>
+          <path d="M18 26 C 27 50, 38 60, 82 67 V78 H18 Z" fill="currentColor" opacity=".14"/>
+          <path d="M18 26 C 27 50, 38 60, 82 67" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="82" cy="67" r="3.5" fill="currentColor"/>
+        </svg>
+        <div class="project-body">
+          <h3>Swipe or Stay <span class="status">In progress</span></h3>
+          <p>How long will someone watch a short video before swiping away? A PyTorch model
+            of watch time trained on 4.7M real user–video interactions (KuaiRec), with a
+            correction for the bias that makes long videos look less engaging than they are.</p>
+          <p class="meta">Deep learning · Recommender systems · Attention · PyTorch</p>
+          <p class="project-links"><a href="https://github.com/sibuilds/swipe-or-stay">Code</a></p> <!-- EDIT -->
+        </div>
+      </article>
+
+      <!-- Project 3: your backprop homework (see the note in the projects README) -->
+      <article class="project" id="nn-from-scratch">
+        <svg class="project-art" viewBox="0 0 96 96" role="img" aria-label="Small neural network with three layers of nodes">
+          <g stroke="currentColor" stroke-width="1.4" opacity=".4">
+            <path d="M22 30 L48 22 M22 30 L48 40 M22 30 L48 58 M22 30 L48 76 M22 48 L48 22 M22 48 L48 40 M22 48 L48 58 M22 48 L48 76 M22 66 L48 22 M22 66 L48 40 M22 66 L48 58 M22 66 L48 76"/>
+            <path d="M48 22 L74 39 M48 40 L74 39 M48 58 L74 39 M48 76 L74 39 M48 22 L74 59 M48 40 L74 59 M48 58 L74 59 M48 76 L74 59"/>
+          </g>
+          <g fill="currentColor">
+            <circle cx="22" cy="30" r="4.5"/><circle cx="22" cy="48" r="4.5"/><circle cx="22" cy="66" r="4.5"/>
+            <circle cx="48" cy="22" r="4.5"/><circle cx="48" cy="40" r="4.5"/><circle cx="48" cy="58" r="4.5"/><circle cx="48" cy="76" r="4.5"/>
+            <circle cx="74" cy="39" r="4.5"/><circle cx="74" cy="59" r="4.5"/>
+          </g>
+        </svg>
+        <div class="project-body">
+          <h3>Autograd &amp; Neural Networks from Scratch <span class="status">Coming soon</span></h3>
+          <p>A micrograd-style autograd engine and neural network in plain NumPy, with every
+            gradient checked against finite differences.</p>
+          <p class="meta">Deep learning fundamentals · Python, NumPy</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =============================== RESEARCH ================================
+       Uncomment this section when you have a paper, preprint, poster or talk.
+  <section id="research" aria-labelledby="research-h">
+    <h2 id="research-h">Research</h2>
+    <ol class="papers">
+      <li>
+        <p class="paper-title">Title of your paper</p>
+        <p class="paper-meta"><strong>Your Name</strong>, Coauthor Name. <em>arXiv</em>, 2026.
+          <a href="https://arxiv.org/abs/XXXX.XXXXX">pdf</a> · <a href="https://github.com/sibuilds/repo">code</a></p>
+      </li>
+    </ol>
+  </section>
+  -->
+
+  <!-- ============================ OUTSIDE RESEARCH =========================== -->
+  <section id="outside" aria-labelledby="outside-h">
+    <h2 id="outside-h">Outside research</h2>
+    <p>I box, play chess, sew, and practice card magic. Ask me about any of them, or
+      for a card trick.</p>
+  </section>
+
+  <footer class="footer">
+    <p>Last updated October 2026 · Plain HTML on GitHub Pages</p> <!-- EDIT the date when you update -->
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 148" width="148" height="148">
+  <!-- Placeholder portrait. Replace with your photo (images/profile.jpg). -->
+  <rect width="148" height="148" fill="#e4eaf5"/>
+  <circle cx="74" cy="58" r="24" fill="#9aabc8"/>
+  <path d="M30 136 C 34 104, 54 92, 74 92 C 94 92, 114 104, 118 136 Z" fill="#9aabc8"/>
+</svg>
